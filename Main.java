@@ -18,8 +18,7 @@ public class Main {
 		ab.insere(6);
 		ab.insere(17);
 		ab.insere(12);
-		
-		//ab.ler();
+		ab.insere(25);
 		
 		//Leitura
 		System.out.println("_____Em Ordem____________");
@@ -32,29 +31,11 @@ public class Main {
 		
 		//Remocao
 		System.out.println("_____Excluindo___________");
-		//Numero a ser excluido
-		int excluir = 12;
-		System.out.println("Excluindo.."+excluir);
-		//Metodo para verificar se o numero a ser excluido é a raiz
-		if (ab.deletarEhRaiz(excluir)) {
-			//Cria uma lista com o que tem na árvore e removo a raiz
-			lista = ab.MapeiaAbaixo();
-			lista.remove(0);
-			System.out.println(lista);
-			//Metodo para setar a nova raiz e limpar a árvore
-			ab.setNewRaiz(Integer.parseInt(lista.get(0)));
-			//Removo o item que se tornou a raiz
-			lista.remove(0);
-			//Insiro os itens restantes da lista
-			for (int i = 0; i<lista.size(); i++)
-				ab.insere(Integer.parseInt(lista.get(i)));
-		} else {
-			//Chama o meotod deletar para quando nao é a raiz
-			ab.deletar(excluir);
-		}
+		ab.deletar(7);
+
 		System.out.println(" ");
-		System.out.println("_____Em Nivel____________");
-		ab.percorre(new EmNivel());
+		System.out.println("_____Profundidade_________");
+		ab.percorre(new Profundidade());
 	}
 
 }
